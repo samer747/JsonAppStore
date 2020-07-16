@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayout,UISearchBarDelegate {
+class SearchController: BaseListController, UICollectionViewDelegateFlowLayout,UISearchBarDelegate {
     //MARK: ----------------- Variables ---------------------
     let cellId = "CellId"
     fileprivate var appsResults = [Result]()
@@ -28,6 +28,8 @@ class AppsSearchController: BaseListController, UICollectionViewDelegateFlowLayo
         super.viewDidLoad()
         
         collectionView.register(SearchCell.self, forCellWithReuseIdentifier: cellId)
+        
+        collectionView.backgroundColor = .white
         
         setupSearchBar()
         setupLable()

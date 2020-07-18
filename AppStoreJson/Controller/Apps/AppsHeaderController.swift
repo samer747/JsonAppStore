@@ -10,7 +10,9 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class AppsHeaderController: BaseListController , UICollectionViewDelegateFlowLayout {
+class AppsHeaderController: HSnappingController , UICollectionViewDelegateFlowLayout {
+    //MARK: --------- Variables ----------
+    var headerDic = [HeaderGroup]() 
     //MARK: --------- ViewDidLoad ----------
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,19 +21,23 @@ class AppsHeaderController: BaseListController , UICollectionViewDelegateFlowLay
         
         self.collectionView!.register(HeaderCells.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout
-        {
-            layout.scrollDirection = .horizontal
-        }
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
-
     //MARK: --------- Cell Setup ----------
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return headerDic.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HeaderCells
+        
+        
+        cell.companyLable.text = headerDic[indexPath.item].name
+        
+        let url = URL(string: headerDic[indexPath.item].imageUrl)
+        cell.imageView.sd_setImage(with: url)
+        
+        cell.tagLineLable.text = headerDic[indexPath.item].tagline
     
         return cell
     }
@@ -43,9 +49,7 @@ class AppsHeaderController: BaseListController , UICollectionViewDelegateFlowLay
         
         return true
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 16, bottom: 0, right: 16 )
-    }
+    
     
 
    

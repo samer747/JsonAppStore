@@ -12,7 +12,6 @@ class AppsRowCell: UICollectionViewCell {
     
     let imageView : UIImageView = {
        let image = UIImageView()
-        image.backgroundColor = .black
         image.layer.cornerRadius = 8
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFill

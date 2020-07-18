@@ -15,6 +15,7 @@ extension UIView {
     func anchor(top: NSLayoutYAxisAnchor?, paddingTop: CGFloat, bottom: NSLayoutYAxisAnchor?, paddingBottom: CGFloat, leading: NSLayoutXAxisAnchor?, paddingLeft: CGFloat, trailing: NSLayoutXAxisAnchor?, paddingRight: CGFloat, width: CGFloat, height: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
         if let top = top {
+
             topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
         }
         if let bottom = bottom {

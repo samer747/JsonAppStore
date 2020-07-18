@@ -47,11 +47,11 @@ class SearchController: BaseListController, UICollectionViewDelegateFlowLayout,U
         
         timer?.invalidate() // da 34an lw ktbna bsor3a my7fz4 w lma el time y5ls yfire kolo
         timer = Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false, block: { (_) in
-            Services.shared.fetchApps(searchTerm: searchText) { (res, err) in
+            Services.shared.fetchSearchApps(searchTerm: searchText) { (res, err) in
                 if let err = err{
                     print("Print Error fetching Json app: ",err)
                 }
-                self.appsResults = res
+                self.appsResults = res?.results ?? []
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }

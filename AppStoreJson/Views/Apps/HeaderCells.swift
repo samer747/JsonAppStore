@@ -12,15 +12,14 @@ class HeaderCells: UICollectionViewCell {
     
     let companyLable : UILabel = {
         let l = UILabel()
-        l.text = "FaceBook"
+        l.textColor = .systemBlue
         l.font = UIFont.monospacedDigitSystemFont(ofSize: 14, weight: UIFont.Weight.init(14))
         l.heightAnchor.constraint(equalToConstant: 13).isActive = true
         l.numberOfLines = 1
         return l
     }()
-    let titleLable : UILabel = {
+    let tagLineLable : UILabel = {
         let l = UILabel()
-        l.text = "Keep up with friends is faster than ever"
         l.font = UIFont.systemFont(ofSize: 24)
         l.heightAnchor.constraint(equalToConstant: 80).isActive = true
         l.numberOfLines = 2
@@ -28,7 +27,6 @@ class HeaderCells: UICollectionViewCell {
     }()
     let imageView : UIImageView = {
        let i = UIImageView()
-        i.backgroundColor = .red
         i.layer.cornerRadius = 8
         i.clipsToBounds = true
         i.contentMode = .scaleAspectFill
@@ -39,11 +37,9 @@ class HeaderCells: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let stack = CustomStackView(arrangedSubviews: [companyLable,titleLable,imageView], spacing: 0, axis: .vertical, dis: .fill)
+        let stack = CustomStackView(arrangedSubviews: [companyLable,tagLineLable,imageView], spacing: 0, axis: .vertical, dis: .fill)
         addSubview(stack)
         stack.fillSuperview()
-        
-        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {

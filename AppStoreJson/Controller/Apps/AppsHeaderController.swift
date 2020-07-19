@@ -21,7 +21,9 @@ class AppsHeaderController: HSnappingController , UICollectionViewDelegateFlowLa
         
         self.collectionView!.register(HeaderCells.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+        collectionView.contentInset = .init(top: 0, left: 14, bottom: 0, right: 14)
+        
+        collectionView.showsHorizontalScrollIndicator = false
     }
     //MARK: --------- Cell Setup ----------
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

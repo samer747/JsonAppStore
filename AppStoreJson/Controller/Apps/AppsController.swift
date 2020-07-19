@@ -9,6 +9,8 @@ class AppsController: BaseListController,UICollectionViewDelegateFlowLayout {
     var groups = [AppsGroup]()
     var headerDic = [HeaderGroup]()
     
+     
+    
     let activityIndicatorView : UIActivityIndicatorView = {
         let a = UIActivityIndicatorView(style: .large)
         a.color = .systemBlue
@@ -28,12 +30,24 @@ class AppsController: BaseListController,UICollectionViewDelegateFlowLayout {
         view.addSubview(activityIndicatorView)
         activityIndicatorView.fillSuperview()
         
+        let refreshController = UIRefreshControl()
+        refreshController.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.refreshControl = refreshController
+        
+        collectionView.showsVerticalScrollIndicator = false
         
         fetchGroups()
         
     }
     
     //MARK: ---------- Methods --------------
+    //MARK:  Handle Refreshing
+    @objc fileprivate func handleRefresh(){
+        groups.removeAll()
+        headerDic.removeAll()
+        collectionView.reloadData()
+        fetchGroups()
+    }
     fileprivate func fetchGroups(){
         let disPatchGroup = DispatchGroup()
         var group1 : AppsGroup?
@@ -91,6 +105,7 @@ class AppsController: BaseListController,UICollectionViewDelegateFlowLayout {
             if let group = group3 {
                 self.groups.append(group)
             }
+            self.collectionView.refreshControl?.endRefreshing()
             self.activityIndicatorView.stopAnimating()
             self.collectionView.reloadData()
         }
@@ -117,6 +132,13 @@ class AppsController: BaseListController,UICollectionViewDelegateFlowLayout {
         
         cell.titleLable.text = groups[indexPath.item].feed.title
         cell.appsHorizontalController.appsGroup = self.groups[indexPath.item]
+        cell.appsHorizontalController.didSelectItem = { [weak self] feedResult in
+            
+            let controller = AppDetailsController()
+            controller.appId = feedResult.id
+            controller.navigationItem.title = feedResult.name
+            self?.navigationController?.pushViewController(controller, animated: true)
+        }
         
         return cell
         

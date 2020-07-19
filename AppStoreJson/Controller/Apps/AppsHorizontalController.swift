@@ -13,6 +13,7 @@ class AppsHorizontalController: HSnappingController ,UICollectionViewDelegateFlo
     let cellID = "CellId"
     var appsGroup : AppsGroup?
     
+   var didSelectItem : ((FeedResults) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,9 @@ class AppsHorizontalController: HSnappingController ,UICollectionViewDelegateFlo
         
         collectionView.register(AppsRowCell.self, forCellWithReuseIdentifier: cellID)
         
-        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+        collectionView.contentInset = .init(top: 0, left: 14, bottom: 0, right: 14)
+        
+        collectionView.showsHorizontalScrollIndicator = false
         
     }
     
@@ -48,6 +51,10 @@ class AppsHorizontalController: HSnappingController ,UICollectionViewDelegateFlo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return lineSpacing
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let app = appsGroup?.feed.results[indexPath.item] else { return }
+        didSelectItem?(app)
     }
     
     

@@ -74,6 +74,13 @@ class SearchController: BaseListController, UICollectionViewDelegateFlowLayout,U
         
         return cell
     }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let appId = String(self.appsResults[indexPath.item].trackId)
+        
+        let appDetailsController = AppDetailsController(appId: appId)
+        navigationController?.pushViewController(appDetailsController, animated: true)
+    }
     //MARK: ----------------- Lable Setup ---------------------
     fileprivate func setupLable()
     {

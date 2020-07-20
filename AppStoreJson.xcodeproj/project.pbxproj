@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31280BBF24C4AA5600A753BC /* AppReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31280BBE24C4AA5600A753BC /* AppReviewsCell.swift */; };
+		31280BC124C4AB6E00A753BC /* AppReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31280BC024C4AB6E00A753BC /* AppReviewController.swift */; };
+		31280BC324C4ABAF00A753BC /* CommentReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31280BC224C4ABAF00A753BC /* CommentReviewCell.swift */; };
+		31280BC524C4BAA000A753BC /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31280BC424C4BAA000A753BC /* Reviews.swift */; };
 		31392CF824BEA0A1003300AF /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31392CF724BEA0A1003300AF /* SearchResult.swift */; };
 		31392CFD24BEAFD9003300AF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31392CFC24BEAFD9003300AF /* Services.swift */; };
 		315B142D24BDB8E700DF96B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B142C24BDB8E700DF96B5 /* AppDelegate.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31280BBE24C4AA5600A753BC /* AppReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewsCell.swift; sourceTree = "<group>"; };
+		31280BC024C4AB6E00A753BC /* AppReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewController.swift; sourceTree = "<group>"; };
+		31280BC224C4ABAF00A753BC /* CommentReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentReviewCell.swift; sourceTree = "<group>"; };
+		31280BC424C4BAA000A753BC /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		31392CF724BEA0A1003300AF /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		31392CFC24BEAFD9003300AF /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		315B142924BDB8E700DF96B5 /* AppStoreJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +131,7 @@
 				31392CF724BEA0A1003300AF /* SearchResult.swift */,
 				31E9CE3724C1477000351E75 /* AppsGroup.swift */,
 				31C90AB424C2117100A3A345 /* HeaderGroup.swift */,
+				31280BC424C4BAA000A753BC /* Reviews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +251,7 @@
 			children = (
 				31EDE08424C352B5008B813B /* AppDetailsController.swift */,
 				31FA157324C3E5D10025B61D /* PreviewScreensController.swift */,
+				31280BC024C4AB6E00A753BC /* AppReviewController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -252,6 +262,8 @@
 				31EDE08724C35F4A008B813B /* AppDetailsCell.swift */,
 				31FA157124C3E3360025B61D /* AppPreviewCell.swift */,
 				31FA157524C3E9520025B61D /* ScreenCell.swift */,
+				31280BBE24C4AA5600A753BC /* AppReviewsCell.swift */,
+				31280BC224C4ABAF00A753BC /* CommentReviewCell.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -398,7 +410,9 @@
 				31392CFD24BEAFD9003300AF /* Services.swift in Sources */,
 				315B144D24BDD57500DF96B5 /* BaseListController.swift in Sources */,
 				31C9009224C08D510074055D /* AppsHorizontalController.swift in Sources */,
+				31280BC124C4AB6E00A753BC /* AppReviewController.swift in Sources */,
 				31C9009824C0B3C80074055D /* AppsHeader.swift in Sources */,
+				31280BBF24C4AA5600A753BC /* AppReviewsCell.swift in Sources */,
 				31C9009024C084C10074055D /* AppsCell.swift in Sources */,
 				31C90ABA24C23A4900A3A345 /* BetterSnappingLayout.swift in Sources */,
 				31C9008E24C082D80074055D /* AppsController.swift in Sources */,
@@ -409,6 +423,7 @@
 				31392CF824BEA0A1003300AF /* SearchResult.swift in Sources */,
 				31FA157424C3E5D10025B61D /* PreviewScreensController.swift in Sources */,
 				31C9009A24C0B76C0074055D /* AppsHeaderController.swift in Sources */,
+				31280BC324C4ABAF00A753BC /* CommentReviewCell.swift in Sources */,
 				31EB190624BE19D0000B4608 /* UIView+Layout.swift in Sources */,
 				31C90AB524C2117100A3A345 /* HeaderGroup.swift in Sources */,
 				315B142D24BDB8E700DF96B5 /* AppDelegate.swift in Sources */,
@@ -416,6 +431,7 @@
 				315B142F24BDB8E700DF96B5 /* SceneDelegate.swift in Sources */,
 				315B144724BDC44A00DF96B5 /* MusicController.swift in Sources */,
 				31EB18F624BDE878000B4608 /* TodayController.swift in Sources */,
+				31280BC524C4BAA000A753BC /* Reviews.swift in Sources */,
 				31C9009624C0A4530074055D /* AppsRow>>Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

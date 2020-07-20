@@ -24,6 +24,7 @@ class PreviewScreensController: HSnappingController , UICollectionViewDelegateFl
         collectionView.backgroundColor = .white
         collectionView.register(ScreenCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.contentInset = .init(top: 0, left: 14, bottom: 0, right: 14)
+        collectionView.showsHorizontalScrollIndicator = false
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScreenCell

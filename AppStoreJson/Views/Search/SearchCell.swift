@@ -22,20 +22,20 @@ class SearchCell: UICollectionViewCell {
             let url = URL(string: appResult.artworkUrl60)
             imageView.sd_setImage(with: url)
             //getting the Screens
-            if appResult.screenshotUrls.count == 0{
+            if appResult.screenshotUrls!.count == 0{
                 return
             }
-            else if appResult.screenshotUrls.count == 1 {
-                screen1.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
+            else if appResult.screenshotUrls!.count == 1 {
+                screen1.sd_setImage(with: URL(string: appResult.screenshotUrls![0]))
             }
-            else if appResult.screenshotUrls.count == 2 {
-                screen1.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
-                screen2.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
+            else if appResult.screenshotUrls!.count == 2 {
+                screen1.sd_setImage(with: URL(string: appResult.screenshotUrls![0]))
+                screen2.sd_setImage(with: URL(string: appResult.screenshotUrls![1]))
             }
             else{
-                screen1.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
-                screen2.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
-                screen3.sd_setImage(with: URL(string: appResult.screenshotUrls[2]))
+                screen1.sd_setImage(with: URL(string: appResult.screenshotUrls![0]))
+                screen2.sd_setImage(with: URL(string: appResult.screenshotUrls![1]))
+                screen3.sd_setImage(with: URL(string: appResult.screenshotUrls![2]))
             }
         }
     }

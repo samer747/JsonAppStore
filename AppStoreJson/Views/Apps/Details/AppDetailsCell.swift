@@ -67,7 +67,7 @@ class AppDetailsCell: UICollectionViewCell {
         return l
     }()
     let priceButton : UIButton = {
-       let b = UIButton()
+        let b = UIButton(type: .system)
         b.backgroundColor = #colorLiteral(red: 0.2181423604, green: 0.4732804894, blue: 0.9671389461, alpha: 1)
         b.setTitle("", for: .normal)
         b.setTitleColor(.white, for: .normal)

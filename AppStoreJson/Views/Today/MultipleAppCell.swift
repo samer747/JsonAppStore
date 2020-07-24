@@ -1,19 +1,28 @@
 //
-//  AppsRowCell.swift
+//  MultipleAppCell.swift
 //  AppStoreJson
 //
-//  Created by samer on 7/16/20.
+//  Created by samer on 7/21/20.
 //  Copyright © 2020 samer. All rights reserved.
 //
 
 import UIKit
 
-class AppsRowCell: UICollectionViewCell {
+class MultipleAppCell: UICollectionViewCell {
+    
+    var app: FeedResults! {
+        didSet{
+            nameLable.text = app.name
+            companyLable.text = app.artistName
+            imageView.sd_setImage(with: URL(string: app.artworkUrl100))
+        }
+    }
     
     let imageView : UIImageView = {
        let image = UIImageView()
         image.layer.cornerRadius = 8
         image.clipsToBounds = true
+        image.backgroundColor = .purple
         image.contentMode = .scaleAspectFill
         image.widthAnchor.constraint(equalToConstant: 60).isActive = true
         image.heightAnchor.constraint(equalToConstant: 60).isActive = true
@@ -24,19 +33,23 @@ class AppsRowCell: UICollectionViewCell {
     
     
     let getButton : UIButton = {
-        let b = UIButton()
+        let b = UIButton(type: .system)
         b.setTitle("GET", for: .normal)
         b.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        b.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        b.backgroundColor = UIColor(white: 0.6, alpha: 0.1)
         b.layer.cornerRadius = 15
         b.setTitleColor(UIColor.systemBlue, for: .normal)
         b.translatesAutoresizingMaskIntoConstraints = false
-        b.addTarget(self, action: #selector(handleGetButton), for: .touchUpInside)
         b.widthAnchor.constraint(equalToConstant: 80).isActive = true
         b.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        b.addTarget(self, action: #selector(handleGetButton), for: .touchUpInside)
         return b
     }()
-    
+    let seprator : UIView = {
+       let v = UIView()
+        v.backgroundColor = UIColor(white: 0.2, alpha: 0.1)
+        return v
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,6 +66,9 @@ class AppsRowCell: UICollectionViewCell {
         allStack.alignment = .center
         addSubview(allStack)
         allStack.fillSuperview()
+        
+        addSubview(seprator)
+        seprator.anchorBySize(top: nil, leading: nameLable.leadingAnchor, bottom: bottomAnchor, trailing: getButton.trailingAnchor, padding: .init(top: 0, left: 0, bottom: -8, right: 0), size: CGSize(width: 0, height: 0.5))
     }
     
     @objc fileprivate func handleGetButton(){

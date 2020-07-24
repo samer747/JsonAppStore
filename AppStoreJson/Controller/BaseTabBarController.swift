@@ -14,10 +14,10 @@ class BaseTabBarController: UITabBarController{
         
         
         viewControllers = [
-            createNavController(viewController: AppsController(), title: "APPS", image: #imageLiteral(resourceName: "apps")),
-            createNavController(viewController: TodayController(), title: "TODAY", image: #imageLiteral(resourceName: "today_icon")),
-            createNavController(viewController: SearchController(), title: "SEARCH", image: #imageLiteral(resourceName: "search")),
-            createNavController(viewController: MusicController(), title: "MUSIC", image: #imageLiteral(resourceName: "music"))
+            createNavController(viewController: TodayController(), title: "TODAY", image: #imageLiteral(resourceName: "today_icon")),  // 1
+            createNavController(viewController: AppsController(), title: "APPS", image: #imageLiteral(resourceName: "apps")),    // 2
+            createNavController(viewController: SearchController(), title: "SEARCH", image: #imageLiteral(resourceName: "search")),// 3
+            createNavController(viewController: MusicController(), title: "MUSIC", image: #imageLiteral(resourceName: "music")),  // 4
         ]
     }
     

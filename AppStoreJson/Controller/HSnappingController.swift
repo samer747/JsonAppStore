@@ -8,7 +8,12 @@
 
 import UIKit
 
+//34an yzbot el horzontl swiping w lazm t3ml content insits b2a fe el class ely b inhirt mn da
+/*
+ collectionView.contentInset = .init(top: 0, left: 14, bottom: 0, right: 14)
+ */
 class HSnappingController: UICollectionViewController {
+    
     init() {
         let layout = BetterSnappingLayout()
         layout.scrollDirection = .horizontal
@@ -24,8 +29,7 @@ class HSnappingController: UICollectionViewController {
 
 
 
-
-//mloooo4 lazma dlw2ty 5las el better snaping c;lass a7sn
+//MARK: -------------------- mloooo4 lazma dlw2ty 5las el better snaping class a7sn -----------------------
 class SnappingLayout: UICollectionViewFlowLayout {
     // snap behavior
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseListController: UICollectionViewController {
+class BaseListController: UICollectionViewController { // da 34an y3ml init bel UICollectionViewFlowLayout 3ltol w mygb4 el error bta3 must be initizled
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())

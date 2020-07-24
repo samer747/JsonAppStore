@@ -28,13 +28,13 @@ class PreviewScreensController: HSnappingController , UICollectionViewDelegateFl
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScreenCell
-        let Url = URL(string: result?.screenshotUrls[indexPath.item] ?? "")
+        let Url = URL(string: result?.screenshotUrls![indexPath.item] ?? "")
         cell.imageView.sd_setImage(with: Url)
         
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return result?.screenshotUrls.count ?? 0
+        return result?.screenshotUrls!.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
